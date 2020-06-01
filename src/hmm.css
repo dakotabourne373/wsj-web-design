@@ -1,0 +1,9 @@
+.navBar ul.dropdown-menu {
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+.navBar {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

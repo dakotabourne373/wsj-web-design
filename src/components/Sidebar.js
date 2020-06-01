@@ -1,6 +1,9 @@
 import React from "react";
+import Button from 'react-bootstrap/Button';
+import { CardHeading } from 'react-bootstrap-icons';
+import sections from './sections';
 
-const Sidebar = ({ menuItems, styles }) => {
+const Sidebar = ({ styles }) => {
     const sidebarStyle = {
         height: "100vh",
         width: styles.sidebarWidth,
@@ -18,7 +21,7 @@ const Sidebar = ({ menuItems, styles }) => {
     };
 
     const iconStyle = {
-        fontSize: 26,
+        fontSize: 30,
         marginRight: styles.sidebarCollapsed ? 0 : 10
     };
 
@@ -29,16 +32,14 @@ const Sidebar = ({ menuItems, styles }) => {
         marginBottom: 60,
         fontWeight: "bold"
     };
+    const handleOpenSidebar = () => {
+
+    }
 
     return (
         <div style={sidebarStyle}>
-            <div style={logoStyle}>{styles.sidebarCollapsed ? "A" : "App"}</div>
-            {menuItems.map((item, i) => (
-                <div key={i} style={menuItemStyle}>
-                    <span style={iconStyle}>{item.icon}</span>
-                    {!styles.sidebarCollapsed && item.text}
-                </div>
-            ))}
+            <Button style={{ width: styles.sidebarWidth }} onClick={() => handleOpenSidebar}><CardHeading style={iconStyle} color='white' /> </Button>
+
         </div>
     );
 };
